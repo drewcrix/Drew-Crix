@@ -1,0 +1,81 @@
+padding: 10px 5px; /*this is short hand for padding. GIVES SPACE TO LOOK LIKE BUTTON. top right bottom left */
+
+round-edge: 4px /*this within an element call would round the edge of a button*/
+
+/*rotate element*/
+
+transform: rotate();
+
+/* type selectors */
+
+/*universial selector acts on all of the selected type */
+
+h1 {
+
+}
+
+/* class selector for specific class add class to html element or id for id selector. ID selector can only be used once per page*/
+
+/*class selector*/
+
+.className {
+
+}
+
+/*id selector*/
+
+#idname {
+
+}
+
+/*can make a combination */
+
+h1,h2,#idname,.className {
+
+}
+
+/*this will do paragraph element in class*/
+
+p.className{
+
+}
+
+/*editing class colour*/
+
+.className{
+  color: white;
+}
+
+/* style links */
+
+a:link{
+  color: red;
+}
+
+a:focus{
+  outline: 1px solid black;
+}
+
+a:hover{ /*elements with Href component in anchor tag */
+  background:gray /*applies style when mouse is hovering over element USEFULL!!!! write in href. Only works when hover over link */
+}
+
+/*can change hex to rgb using online tool and then add a to make rgba(include four values and last is opacity)
+
+/* width and height effects the content box, padding adds padding around content, border effects boarder, and margin is overal element size that will take up on screen
+
+Create an containor for content! Wrap content in a div*/
+
+/*FLEXBOX
+
+-flex containor is parent
+-flex child is within and this goes horizontal
+
+define flex container
+
+div class containor
+
+.containor {
+diplay flex;
+display: inline flex. Containor stays inline.
+}

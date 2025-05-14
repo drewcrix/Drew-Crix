@@ -1,0 +1,54 @@
+
+<head>
+  <title class=  "title">Visual Communication Tracker - Global Tracker</title>
+    <div class="grid-contain">
+      <div class="child-title">
+        <h1 class=  "title"><img src = C:\Users\acrix\Desktop\VCT\public\shared\globalWhite.png height = 40px width = 40px />Global Tracker</h1>
+      </div>
+      <div class="child-button">
+        <div class="left">
+          <a class = "profile" href="C:\Users\acrix\Desktop\VCT\public\webpages\My_Profile.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\profileWhite.png" height = 40px width = 40px></a>
+          <p class = "p">My Profile</p>
+        </div>
+        <div class="right">
+          <a class = "logoff" href="C:\Users\acrix\Desktop\VCT\public\webpages\logout.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\LOGOFFWhite.png" height = 40px width = 40px></a>
+          <p class = "p">Log Off</p>
+        </div>
+    </div>
+    </div
+  <meta charset="utf-8">
+  <link rel="stylesheet" media="all" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\headerstyle.css" />
+</head>
+
+<p><i>Hi <b>Drew</b>, welcome to your communication tracker!</i></p>
+<div id="main">
+  <form id = "sorter" class="sort" action="C:\Users\acrix\Desktop\VCT\private\completedHTML\global.html" method = "get">
+    <label for="sort">Sort By:</label>
+    <select name="sort" id="sort" onchange="this.form.submit()">
+      <option name="select sort method">Select Sorting Type</option>
+      <option value="alphabetical">Alphabetical</option>
+      <option value="createASC">Oldest to Newest</option>
+      <option value="createDESC">Newest to Oldest</option>
+      <option value="DueDate">Due Date</option>
+    </select>
+    <noscript><input type="submit" value ="submit"/></noscript>
+  </form>
+  <img id="legend" src=C:\Users\acrix\Desktop\VCT\public\shared\legend.PNG alt = "legend" />
+
+  <table id="global">
+    <tr>
+      <th class="nobackground">Name</th>
+      <?php foreach($require as $doc){?>
+        <th class="rotate"><?php echo $doc->Name; ?></th>
+  <?php}?>
+    </tr>
+    <?php foreach($adminUsers as $user){?>
+      <tr>
+        <td><?php echo $user; ?><td>
+        <?php foreach($require as $doc){ //check the status of each user at each doc and echo that in the rows?>
+          <?php $status = User_Doc::return_status_prepared($doc->ID, $user->ID); ?>
+          <td><?php echo $status;?></td>
+   <?php}?>
+    </tr>
+  <?php}?>
+</div>

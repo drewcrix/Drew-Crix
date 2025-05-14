@@ -1,0 +1,170 @@
+<head>
+  <title class=  "title">Visual Communication Tracker - Add New Communication Dissemination</title>
+    <div class="grid-contain">
+      <div class="child-title">
+        <h1 class=  "title"><img src = "C:\Users\acrix\Desktop\VCT\public\shared\adminView.png" height = 40px width = 40px />Add New Communication Dissemination</h1>
+      </div>
+      <div class="child-button">
+        <div class="left">
+          <a class = "profile" href="C:\Users\acrix\Desktop\VCT\public\webpages\My_Profile.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\profileWhite.png" height = 40px width = 40px></a>
+          <p class = "p">My Profile</p>
+        </div>
+        <div class="right">
+          <a class = "logoff" href="C:\Users\acrix\Desktop\VCT\public\webpages\logout.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\LOGOFFWhite.png" height = 40px width = 40px></a>
+          <p class = "p">Log Off</p>
+        </div>
+    </div>
+    </div
+  <meta charset="utf-8">
+  <link rel="stylesheet" media="all" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\headerstyle.css" />
+</head>
+
+<div id="main">
+
+  <div class="new-document">
+
+    <form action="<?php echo url_for('C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\new.php?id=' . h(u($id))); ?>" method="post">
+
+      <h2>Entry Information</h2><br>
+
+      <label>Title:</label>
+      <input id="first" type="text" name="document[Name]" value="<?php echo h($document->name); ?>" /><br><br>
+
+      <label>Link:</label>
+      <input id="first" type="text" name="document[Hyperlink]" value="<?php echo h($document->hyperlink); ?>" /> <br><br>
+
+
+      <label>Dept:</label>
+      <?php $department = adminDepart_prepared($id,$database); ?>
+        <select name = document[Dept]>
+            <option value="<?php echo $department;?>"><?php echo $department; //department is defined earlier in the new page?></option>
+      </select> <br><br>
+
+
+      <label>Team:</label>
+        <select name="document[category]">
+          <?php
+          $array = CatIDquarry_prepared($department, $database);; //write a function that gathers all the catagories that point to the one department.
+          ?>
+          <option value=""></option>
+        <?php foreach($array as $key=>$value) { ?>
+          <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+      </select> <br><br>
+
+      <label>Type:</label>
+        <select name="document[Type]">
+          <?php $type = Type::find_all_prepared();?>
+          <option value=""></option>
+        <?php foreach($type as $key=>$value) { ?>
+          <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+      </select> <br>
+
+    <h2>Due Date + Notification</h2><br>
+
+      <label>Due Date:</label>
+      <input type="date" name="document[DueDate]" value="<?php echo h($document->DueDate); ?>" />
+
+      <label>Recurrence:</label>
+      <select name="document[Expiry]">
+        <option value="0" selected>None</option>
+        <option value="0.5">Six Months</option>
+        <option value="1">One Year</option>
+        <option value="1.5">18 Months</option>
+        <option value="2">Two Years</option>
+      </select><br><br>
+
+      <label>Send Notification:</label>
+      <label for="yes">Yes</label>
+      <input type="radio" name="document[Notify]" id="yes" value="1" onclick="myFunction2()"/>
+      <label for="no">No</label>
+      <input type="radio" name="document[Notify]" id="no" value="0" onclick="myFunction4()"/>
+
+
+    <div id="hide" hidden>
+      <br>
+      <label>Send every</label>
+
+        <select name="document[notifyperiod]">
+          <option value="" selected></option>
+          <option value="1">1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <select name="document[day/monthnotify]">
+          <option value="days" selected>days</option>
+          <option value="weeks">weeks</option>
+        </select>
+        <label>until completed</label>
+    </div>
+
+      <br>
+
+      <h2>Past Due Reminders</h2><br>
+
+
+      <label>Send Notification</label>
+      <label for="yes">Yes</label>
+      <input type="radio" name="document[send]" id="yes" value="1" onclick="myFunction()"/>
+      <label for="no">No</label>
+      <input type="radio" name="document[send]" id="no" value="0" onclick="myFunction3()"/>
+
+
+    <div id="hidden" hidden>
+      <br>
+      <label>Send every</label>
+      <select name="document[sendeveryduedate]">
+        <option value="" selected></option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <select name="document[day/monthduedate]">
+        <option value="days" selected>days</option>
+        <option value="weeks">weeks</option>
+      </select>
+      <label>until completed</label>
+    </div>
+      <div id="submit">
+        <input type="submit" name="document[Publish]" value="Publish" id="publish"/>
+        <input type="submit" name="document[Draft]" value = "Save As Draft" id="draft"/>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+<script>
+function myFunction() {
+  document.getElementById("hidden").hidden = false;
+}
+function myFunction2() {
+  document.getElementById("hide").hidden = false;
+}
+function myFunction3() {
+  document.getElementById("hidden").hidden = true;
+}
+function myFunction4() {
+  document.getElementById("hide").hidden = true;
+}
+</script>
