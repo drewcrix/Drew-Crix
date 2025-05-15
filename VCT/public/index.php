@@ -8,9 +8,9 @@ $password = '';
 if(is_post_request()) { //if there is a post request will set the username and password
 
   $username = $_POST['username'] ?? '';
-  $userldap = 'S&WCHSC\\'.$username ;
+  $userldap = 'domain\\'.$username ;
   $password = $_POST['password'] ?? '';
-  $ldap = ldap_connect("SBADCRTP.sw.ca");
+  $ldap = ldap_connect("AD_Server_hostname.sw.ca");
 
   // Validations
   if(is_blank($username)) {
