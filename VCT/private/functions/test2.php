@@ -3,7 +3,7 @@
 require_once('C:\Users\acrix\Desktop\VCT\private\functions\initialize.php');
 
 $args = array();
-$args['Name'] = "finn legomaster";
+$args['Name'] = "James";
 $args['Hyperlink'] = 'www.legoland.com';
 $args['Dept'] = 'brain research';
 $args['Notify'] = 0;
