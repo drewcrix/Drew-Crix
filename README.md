@@ -16,8 +16,8 @@ The project is a communication dissemention system designed for employees to acc
 
 ## Author
 
-Drew Crix
+Drew
 
-You can find more of my projects on my personal website linked [here.](https://drewcrix.created.app/)
+I will be adding my website link here soon where you can see more of my projects
 
 
