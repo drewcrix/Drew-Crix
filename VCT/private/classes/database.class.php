@@ -355,7 +355,7 @@ public function catName($cat){
    return array_shift($row);
  }
 
- public function paginate($require,$sort){ //this function is used for pagination. I believe the way it is set up it will load everything in the home pages already. Was hoping to not do that for speed reasons
+ public function paginate($require,$sort){ //this function is used for pagination. The way this is set up it will load everything in the home pages already. Better to not do that for speed reasons
    if($require == NULL){
      return $require;
    }
