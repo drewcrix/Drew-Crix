@@ -34,8 +34,8 @@
   // require_once('classes/bicycle.class.php');
 
   // -> All classes in directory
-  foreach(glob('C:\xampp\htdocs\VCT\private\classes\*.class.php') as $file) { //require each class in directory once. May have to change this since class is in a different directory
-    require_once($file); //returns through all of them as an array and then loops through all of them
+  foreach(glob(__DIR__  . '../../classes/*.class.php') as $file) { //require each class in directory once. May have to change this since class is in a different directory
+    require_once($file); //returns through all of them as an array and then loops through all of them 
   }
 
 
