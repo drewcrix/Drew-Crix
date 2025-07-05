@@ -4,29 +4,29 @@
   <title class=  "title">Visual Communication Tracker - Edit Existing</title>
     <div class="grid-contain">
       <div class="child-title">
-        <h1 class=  "title"><img src = "C:\Users\acrix\Desktop\VCT\public\shared\adminView.png" height = 40px width = 40px />My Admin View</h1>
+        <h1 class=  "title"><img src = "../../../public/shared/adminView.png" height = 40px width = 40px />My Admin View</h1>
       </div>
       <div class="child-button">
         <div class="left">
-          <a class = "profile" href="C:\Users\acrix\Desktop\VCT\public\webpages\My_Profile.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\profileWhite.png" height = 40px width = 40px></a>
+          <a class = "profile" href="../../../public/webpages/My_Profile.php" target="_blank"><img src="../../../public/shared/profileWhite.png" height = 40px width = 40px></a>
           <p class = "p">My Profile</p>
         </div>
         <div class="right">
-          <a class = "logoff" href="C:\Users\acrix\Desktop\VCT\public\webpages\logout.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\LOGOFFWhite.png" height = 40px width = 40px></a>
+          <a class = "logoff" href="../../../public/webpages/logout.php" target="_blank"><img src="../../../public/shared/LOGOFFWhite.png" height = 40px width = 40px></a>
           <p class = "p">Log Off</p>
         </div>
     </div>
     </div
   <meta charset="utf-8">
-  <link rel="stylesheet" media="all" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\headerstyle.css" />
+  <link rel="stylesheet" media="all" href="./headerstyle.css" />
 </head>
 <p><i>Hi <b>Drew</b>, welcome to your communication tracker!</i></p>
 <div class="backhome">
-  <a id="home" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\home.html"> >> Back Home </a>
+  <a id="home" href="./home.html"> >> Back Home </a>
 </div>
 <div id="main">
   <h1>My Communications</h1>
-  <form id = "sorter" class="sort" action="C:\Users\acrix\Desktop\VCT\private\completedHTML\homeAdmin.html" method = "get">
+  <form id = "sorter" class="sort" action="./homeAdmin.html" method = "get">
     <label for="sort">Sort By:</label>
     <select name="sort" id="sort" onchange="this.form.submit()">
       <option name="select sort method">Select Sorting Type</option>
@@ -50,7 +50,7 @@
       <td><?php echo $doc->Name ; ?></td>
       <td><?php echo $doc->CreateDate ; ?></td>
       <td><?php echo $doc->Publish ; ?></td>
-      <td class="readtheUP"><a href=<?php echo url_for("C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\edit.php?id=" . h(u($doc->ID))) ?> target="_blank">Edit</a></td></a>
+      <td class="readtheUP"><a href=<?php echo url_for("../../../public/webpages/admin_webpages/edit.php?id=" . h(u($doc->ID))) ?> target="_blank">Edit</a></td>
     </tr>
   <?php } ?>
   </table>
