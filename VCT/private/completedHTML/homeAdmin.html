@@ -3,49 +3,49 @@
   <title class=  "title">Visual Communication Tracker - My Admin View</title>
     <div class="grid-contain">
       <div class="child-title">
-        <h1 class=  "title"><img src = "C:\Users\acrix\Desktop\VCT\public\shared\adminView.png" height = 40px width = 40px />My Admin View</h1>
+        <h1 class=  "title"><img src = "../../../public/shared/adminView.png" height = 40px width = 40px />My Admin View</h1>
       </div>
       <div class="child-button">
         <div class="left">
-          <a class = "profile" href="C:\Users\acrix\Desktop\VCT\public\webpages\My_Profile.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\profileWhite.png" height = 40px width = 40px></a>
+          <a class = "profile" href="../../../public/webpages/My_Profile.php" target="_blank"><img src="../../../public/shared/profileWhite.png" height = 40px width = 40px></a>
           <p class = "p">My Profile</p>
         </div>
         <div class="right">
-          <a class = "logoff" href="C:\Users\acrix\Desktop\VCT\public\webpages\logout.php" target="_blank"><img src="C:\Users\acrix\Desktop\VCT\public\shared\LOGOFFWhite.png" height = 40px width = 40px></a>
+          <a class = "logoff" href="../../../public/webpages/logout.php" target="_blank"><img src="../../../public/shared/LOGOFFWhite.png" height = 40px width = 40px></a>
           <p class = "p">Log Off</p>
         </div>
     </div>
     </div
   <meta charset="utf-8">
-  <link rel="stylesheet" media="all" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\headerstyle.css" />
+  <link rel="stylesheet" media="all" href="./headerstyle.css" />
 </head>
 <p><i>Hi <b>Drew</b>, welcome to your communication tracker!</i></p>
 <div class="containor">
   <div id="flex-item">
-    <a class="imgcenter" href="C:\Users\acrix\Desktop\VCT\private\completedHTML\homeUser-MyTracker.html"><img src=C:\Users\acrix\Desktop\VCT\public\shared\trackerBlue.png  height = 100px width = 100px  alt="tracker page"></a>
+    <a class="imgcenter" href="./homeUser-MyTracker.html"><img src="../../../public/shared/trackerBlue.png"  height = 100px width = 100px  alt="tracker page"></a>
     <p class="center">My Tracker</p>
   </div>
   <div id="flex-item">
-    <a class="imgcenter" href="<?php echo url_for('C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\global.php'. h(u($id)));?>"><img src="C:\Users\acrix\Desktop\VCT\public\shared\globalblue.png"  height = 100px width = 100px alt="Global Tracker"></a>
+    <a class="imgcenter" href="<?php echo url_for('../../../public/webpages/admin_webpages/global.php'. h(u($id)));?>"><img src="../../../public/shared/globalblue.png"  height = 100px width = 100px alt="Global Tracker"></a>
     <p class="center">Global Tracker</p>
   </div>
   <div id="flex-item">
-    <a class="imgcenter" href="<?php echo url_for('C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\new.php'. h(u($id)));?>"><img src="C:\Users\acrix\Desktop\VCT\public\shared\newBlue.png"  height = 100px width = 100px alt="new doc"></a>
+    <a class="imgcenter" href="<?php echo url_for('../../../public/webpages/admin_webpages/new.php'. h(u($id)));?>"><img src="../../../public/shared\newBlue.png"  height = 100px width = 100px alt="new doc"></a>
     <p class="center">Add New</p>
   </div>
   <div id="flex-item">
-    <a class="imgcenter" href="<?php echo url_for('C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\edit.php'. h(u($id)));?>"><img src="C:\Users\acrix\Desktop\VCT\public\shared\editBlue.png" height = 100px width = 100px alt="edit existing doc"></a>
+    <a class="imgcenter" href="<?php echo url_for('../../../public/webpages/admin_webpages/edit.php'. h(u($id)));?>"><img src="../../../public/shared/editBlue.png" height = 100px width = 100px alt="edit existing doc"></a>
     <p class="center">Edit Existing</p>
   </div>
   <div id="flex-item">
-    <a class="imgcenter" href="<?php echo url_for('C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\settings.php'. h(u($id)));?>"><img src="C:\Users\acrix\Desktop\VCT\public\shared\settings.png"  height = 100px width = 100px alt="admin settings"></a>
+    <a class="imgcenter" href="<?php echo url_for('../../../public/webpages/admin_webpages/settings.php'. h(u($id)));?>"><img src="../../../public/shared/settings.png"  height = 100px width = 100px alt="admin settings"></a>
     <p class="center">Admin Settingsr</p>
   </div>
 </div>
 
 <div id="main">
   <h1>My Communications</h1>
-  <form id = "sorter" class="sort" action="C:\Users\acrix\Desktop\VCT\private\completedHTML\homeAdmin.html" method = "get">
+  <form id = "sorter" class="sort" action="./homeAdmin.html" method = "get">
     <label for="sort">Sort By:</label>
     <select name="sort" id="sort" onchange="this.form.submit()">
       <option name="select sort method">Select Sorting Type</option>
@@ -80,7 +80,7 @@
       <td>Standard Tattoos</td>
       <td>Aug 14,2021</td>
       <td>Draft</td>
-      <td><a class = "readtheUP" href = "C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\edit.php">Resume</a></td>
+      <td><a class = "readtheUP" href = "../../../public/webpages/admin_webpages/edit.php">Resume</a></td>
     </tr>
     <tr>
       <td>H+N Assessment Form</td>
@@ -92,7 +92,7 @@
       <td>Bladder Assessment Tool</td>
       <td>Dec 2,2021</td>
       <td>Draft</td>
-      <td><a class = "readtheUP" href = "C:\Users\acrix\Desktop\VCT\public\webpages\admin_webpages\edit.php">Resume</a></td>
+      <td><a class = "readtheUP" href = "../../../public/webpages/admin_webpages/edit.php">Resume</a></td>
     </tr>
   </table>
 
